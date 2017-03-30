@@ -1,5 +1,11 @@
 (ns codejam.uber
-  (:require [clojure.string :as s]))
+  (:require [clojure.string :as s]
+            [clj-time.format :as f]))
+
+(def time-formatter (f/formatter "HH:mm"))
+
+(defn parse-HHmm [ts]
+  (f/parse time-formatter ts))
 
 (defn read-lines
   [some-str]
